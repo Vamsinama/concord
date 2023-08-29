@@ -1,0 +1,13 @@
+configuration:
+  arguments:
+    formNameVar: "myForm"
+
+flows:
+  default:
+  - form: ${formNameVar}
+  - log: "Hello, ${myForm.name}"
+  - log: "Hello, ${context.getVariable(formNameVar).name}"
+
+forms:
+  myForm:
+    - name: { type: "string" }
